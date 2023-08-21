@@ -1,4 +1,4 @@
-[tool.poetry]
+p[tool.poetry]
 name = "exercise-16"
 version = "0.1.0"
 description = ""
