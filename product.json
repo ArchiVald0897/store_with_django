@@ -1,0 +1,93 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "телефон",
+      "description": null,
+      "image": "",
+      "category": 6,
+      "price": 30000,
+      "date_create": null,
+      "last_modified_data": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "рюкзак",
+      "description": null,
+      "image": "",
+      "category": 7,
+      "price": 2000,
+      "date_create": null,
+      "last_modified_data": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "пульт",
+      "description": null,
+      "image": "",
+      "category": 8,
+      "price": 500,
+      "date_create": null,
+      "last_modified_data": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Стакан",
+      "description": null,
+      "image": "",
+      "category": 9,
+      "price": 1200,
+      "date_create": null,
+      "last_modified_data": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "телевизор",
+      "description": null,
+      "image": "",
+      "category": 20,
+      "price": 15000,
+      "date_create": null,
+      "last_modified_data": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "name": "роутер",
+      "description": null,
+      "image": "",
+      "category": 15,
+      "price": 3000,
+      "date_create": null,
+      "last_modified_data": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "name": "джинсы",
+      "description": null,
+      "image": "",
+      "category": 18,
+      "price": 15000,
+      "date_create": null,
+      "last_modified_data": null
+    }
+  }
+]
