@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b4baf90-d323-462d-894f-43d85bfe3e69" name="Changes" comment="commit3">
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="3b4baf90-d323-462d-894f-43d85bfe3e69" name="Changes" comment="commit2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,13 +31,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Python\homework\exercise_16\store_with_django\catalog" />
       <recent name="D:\Python\homework\exercise_16\store_with_django\catalog\templates\catalog\layouts" />
     </key>
   </component>
@@ -68,29 +64,12 @@
       <option name="project" value="LOCAL" />
       <updated>1692724259937</updated>
     </task>
-    <task id="LOCAL-00003" summary="commit2">
-      <option name="closed" value="true" />
-      <created>1692728877618</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1692728877618</updated>
-    </task>
-    <task id="LOCAL-00004" summary="commit3">
-      <option name="closed" value="true" />
-      <created>1692745293672</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1692745293672</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit1" />
     <MESSAGE value="commit2" />
-    <MESSAGE value="commit3" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit3" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit2" />
   </component>
 </project>
