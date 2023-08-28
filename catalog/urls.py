@@ -12,3 +12,4 @@ urlpatterns = [
     path('<int:pk>/products/', products, name='products'),
     path('<int:pk>/product_info/', product_info, name='product_info'),
 ]
+
