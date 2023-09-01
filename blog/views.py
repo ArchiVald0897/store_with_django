@@ -7,13 +7,13 @@ from blog.models import Blog
 class BlogCreateView(CreateView):
     model = Blog
     fields = ('title', 'text', 'blog_img', 'is_published', 'date_of_creation')
-    success_url = reverse_lazy('weblog:list')
+    success_url = reverse_lazy('blog:list')
 
     def form_valid(self, form):
         if form.is_valid():
-            new_weblog = form.save()
-            new_weblog.slug = slugify(new_weblog.title)
-            new_weblog.save()
+            new_blog = form.save()
+            new_blog.slug = slugify(new_blog.title)
+            new_blog.save()
 
         return super().form_valid(form)
 
@@ -48,16 +48,16 @@ class BlogUpdateView(UpdateView):
 
     def form_valid(self, form):
         if form.is_valid():
-            new_weblog = form.save()
-            new_weblog.slug = slugify(new_weblog.title)
-            new_weblog.save()
+            new_blog = form.save()
+            new_blog.slug = slugify(new_blog.title)
+            new_blog.save()
 
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('weblog:view', args=[self.kwargs.get('pk')])
+        return reverse('blog:view', args=[self.kwargs.get('pk')])
 
 
 class BlogDeleteView(DeleteView):
     model = Blog
-    success_url = reverse_lazy('weblog:list')
+    success_url = reverse_lazy('blog:list')
