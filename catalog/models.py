@@ -27,6 +27,7 @@ class Product(models.Model):
     date_create = models.DateField(**NULLABLE, verbose_name='Дата создания')
     last_modified_data = models.DateField(**NULLABLE, verbose_name='Дата последнего изменения')
 
+
     def __str__(self):
         # Строковое отображение объекта
         return f'{self.name}: {self.price}'
@@ -34,3 +35,17 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Продукт')
+    version_number = models.CharField(max_length=50, verbose_name='Номер версии', **NULLABLE)
+    version_name = models.CharField(max_length=50, verbose_name='Название версии')
+    is_active = models.BooleanField(verbose_name='В наличии', default=False)
+
+    def __str__(self):
+        return f'{self.version_number}/{self.version_name}'
+
+    class Meta:
+        verbose_name = 'Версия'
+        verbose_name_plural = 'Версии'

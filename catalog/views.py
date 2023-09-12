@@ -1,7 +1,10 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import Http404
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, View
-
-from catalog.models import Product, Category
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, View, CreateView, UpdateView
+from catalog.forms import ProductForm, VersionForm
+from catalog.models import Product, Category, Version
 
 
 class HomeListView(ListView):
@@ -32,22 +35,59 @@ class ContactView(View):
 
 class ProductListView(ListView):
     model = Product
-    template_name = 'catalog/products.html'
+    template_name = 'catalog/all_products.html'
     context_object_name = 'products'
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        queryset = queryset.filter(category_of_product=self.kwargs.get('pk'))
+        queryset = queryset.filter(category=self.kwargs.get('pk'))
         return queryset
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
 
         category_item = Category.objects.get(pk=self.kwargs['pk'])
-        context_data['title'] = category_item.name_of_category
+        context_data['title'] = category_item.name
         return context_data
 
 
 class ProductDetailView(DetailView):
     model = Product
-    template_name = 'catalog/info_about_product.html'
+    template_name = 'catalog/product_info.html'
+
+
+class ProductCreateView(LoginRequiredMixin, CreateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:home')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:home')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('catalog:product_detail', args=[self.object.pk])
+
+
+class VersionCreateView(LoginRequiredMixin, CreateView):
+    model = Version
+    form_class = VersionForm
+    success_url = reverse_lazy('catalog:home')
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
+    def form_invalid(self, form):
+        raise Http404("У вас нет разрешения создавать версии продуктов")
