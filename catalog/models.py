@@ -1,4 +1,5 @@
 from django.db import models
+from users.models import User
 
 NULLABLE = {'blank': True, 'null': True}
 
@@ -6,11 +7,11 @@ NULLABLE = {'blank': True, 'null': True}
 class Category(models.Model):
     """Модель для таблицы Категорий"""
     name = models.CharField(max_length=100, verbose_name='Наименование')
-    description = models.TextField(**NULLABLE, verbose_name='Описание')
+    description = models.TextField(verbose_name='Описание', **NULLABLE)
 
     def __str__(self):
         # Строковое отображение объекта
-        return f'{self.name}'
+        return f'{self.name} ({self.description[:20]}...)'
 
     class Meta:
         verbose_name = 'Категория'
@@ -20,17 +21,19 @@ class Category(models.Model):
 class Product(models.Model):
     """Модель для таблицы Продуктов"""
     name = models.CharField(max_length=150, verbose_name='Наименование')
-    description = models.TextField(**NULLABLE, verbose_name='Описание')
-    image = models.ImageField('images/', **NULLABLE)
+    description = models.TextField(verbose_name='Описание', **NULLABLE)
+    image = models.ImageField(upload_to='product/', verbose_name='картинка', **NULLABLE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    price = models.IntegerField(verbose_name='Цена')
-    date_create = models.DateField(**NULLABLE, verbose_name='Дата создания')
-    last_modified_data = models.DateField(**NULLABLE, verbose_name='Дата последнего изменения')
-
+    price = models.FloatField(verbose_name='Цена')
+    date_create = models.DateTimeField(verbose_name='Дата создания', **NULLABLE)
+    last_modified_data = models.DateTimeField(verbose_name='Дата последнего изменения', **NULLABLE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Создатель')
 
     def __str__(self):
         # Строковое отображение объекта
-        return f'{self.name}: {self.price}'
+        return (f'{self.name}.'
+                f'Категория: {self.category}.'
+                f'Цена: {self.price}')
 
     class Meta:
         verbose_name = 'Продукт'
