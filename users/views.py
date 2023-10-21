@@ -1,100 +1,95 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import Http404
-from django.shortcuts import render
+from django.views.generic import CreateView, UpdateView, View, TemplateView
+
+from users.models import User
+
+from django.contrib.auth import get_user_model
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, View, CreateView, UpdateView
+from django.utils.crypto import get_random_string
 
-from catalog.forms import ProductForm, VersionForm
-from catalog.models import Product, Category, Version
-
-
-class HomeListView(ListView):
-    model = Category
-    template_name = 'catalog/home.html'
+from users.forms import UserRegisterForm, UserProfileForm, PasswordResetForm
+from users.services import send_verification_email, send_password
 
 
-class ContactView(View):
-    def get(self, request):
-        context = {
-            'title': 'Контакты'
-        }
-        return render(request, 'catalog/contacts.html', context)
-
-    def post(self, request):
-        if request.method == 'POST':
-            name = request.POST.get('name')
-            phone = request.POST.get('phone')
-            message = request.POST.get('message')
-            print(f'Имя: {name}\n'
-                  f'Номер телефона: {phone}\n'
-                  f'Сообщение: {message}')
-        context = {
-            'title': 'Контакты'
-        }
-        return render(request, 'catalog/contacts.html', context)
-
-
-class ProductListView(ListView):
-    model = Product
-    template_name = 'catalog/products.html'
-    context_object_name = 'products'
-
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        queryset = queryset.filter(category_of_product=self.kwargs.get('pk'))
-        return queryset
-
-    def get_context_data(self, **kwargs):
-        context_data = super().get_context_data(**kwargs)
-
-        category_item = Category.objects.get(pk=self.kwargs['pk'])
-        context_data['title'] = category_item.name_of_category
-
-        for product in context_data['products']:
-            version = product.version_set.first()
-            product.version = version
-
-        return context_data
-
-
-class ProductDetailView(DetailView):
-    model = Product
-    template_name = 'catalog/info_about_product.html'
-    context_object_name = 'product'
-
-
-class ProductCreateView(LoginRequiredMixin, CreateView):
-    model = Product
-    form_class = ProductForm
-    success_url = reverse_lazy('catalog:home')
+class RegisterView(CreateView):
+    model = User
+    form_class = UserRegisterForm
+    template_name = 'users/register.html'
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
-
-
-class ProductUpdateView(LoginRequiredMixin, UpdateView):
-    model = Product
-    form_class = ProductForm
-    success_url = reverse_lazy('catalog:home')
-
-    def form_valid(self, form):
-        form.instance.user = self.request.user
+        verification_token = get_random_string(length=15)
+        form.instance.verification_token = verification_token
+        send_verification_email(form.instance.email, verification_token)
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('catalog:product_detail', args=[self.object.pk])
+        return reverse_lazy('users:verify_email')
 
 
-class VersionCreateView(LoginRequiredMixin, CreateView):
-    model = Version
-    form_class = VersionForm
-    success_url = reverse_lazy('catalog:home')
+class VerifyEmailView(View):
+    template_name = 'users/verify_email.html'
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs['user'] = self.request.user
-        return kwargs
+    def get(self, request):
+        return render(request, self.template_name)
 
-    def form_invalid(self, form):
-        raise Http404("У вас нет разрешения создавать версии продуктов")
+    def post(self, request):
+        verification_code = request.POST.get('verification_code')
+        User = get_user_model()
+        try:
+            user = User.objects.get(verification_token=verification_code)
+            if not user.is_verified:
+                user.is_verified = True
+                user.save()
+                return redirect('users:confirmation_success')
+        except User.DoesNotExist:
+            pass
+        return redirect('users:confirmation_error')
+
+
+class ConfirmationSuccessView(TemplateView):
+    template_name = 'users/confirmation_success.html'
+
+
+class ConfirmationErrorView(TemplateView):
+    template_name = 'users/confirmation_error.html'
+
+
+class ProfileView(UpdateView):
+    model = User
+    form_class = UserProfileForm
+    success_url = reverse_lazy('users:profile')
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
+class ConfirmEmailView(View):
+
+    def get(self, request, token):
+        User = get_user_model()
+
+        try:
+            user = User.objects.get(verification_token=token)
+            if not user.is_verified:
+                user.is_verified = True
+                user.save()
+                return render(request, 'confirmation_success.html')
+
+        except User.DoesNotExist:
+            return render(request, 'confirmation_error.html')
+
+
+class GenerateAndSendPasswordView(View):
+    template_name = 'users/generate_and_send_password.html'
+    form = PasswordResetForm()
+
+    def get(self, request):
+        return render(request, self.template_name, {'form': self.form})
+
+    def post(self, request):
+        self.form = PasswordResetForm(request.POST)
+        if self.form.is_valid():
+            email = self.form.cleaned_data['email']
+            if send_password(email):
+                return render(request, 'users/password_reset_success.html', {'email': email})
+        return render(request, 'users/password_reset_error.html')

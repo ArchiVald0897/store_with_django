@@ -1,8 +1,13 @@
+from django.core.cache import cache
+
+from catalog.services import get_categories_list
+from config import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, View, CreateView, UpdateView
+
 from catalog.forms import ProductForm, VersionForm
 from catalog.models import Product, Category, Version
 
@@ -10,6 +15,14 @@ from catalog.models import Product, Category, Version
 class HomeListView(ListView):
     model = Category
     template_name = 'catalog/home.html'
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+
+        categories_list = get_categories_list()
+
+        context_data['categories'] = categories_list
+        return context_data
 
 
 class ContactView(View):
@@ -35,25 +48,31 @@ class ContactView(View):
 
 class ProductListView(ListView):
     model = Product
-    template_name = 'catalog/all_products.html'
+    template_name = 'catalog/products.html'
     context_object_name = 'products'
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        queryset = queryset.filter(category=self.kwargs.get('pk'))
+        queryset = queryset.filter(category_of_product=self.kwargs.get('pk'))
         return queryset
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
 
         category_item = Category.objects.get(pk=self.kwargs['pk'])
-        context_data['title'] = category_item.name
+        context_data['title'] = category_item.name_of_category
+
+        for product in context_data['products']:
+            version = product.version_set.first()
+            product.version = version
+
         return context_data
 
 
 class ProductDetailView(DetailView):
     model = Product
-    template_name = 'catalog/product_info.html'
+    template_name = 'catalog/info_about_product.html'
+    context_object_name = 'product'
 
 
 class ProductCreateView(LoginRequiredMixin, CreateView):

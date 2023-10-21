@@ -1,39 +1,37 @@
 from django.db import models
+
 from users.models import User
 
 NULLABLE = {'blank': True, 'null': True}
 
 
 class Category(models.Model):
-    """Модель для таблицы Категорий"""
-    name = models.CharField(max_length=100, verbose_name='Наименование')
-    description = models.TextField(verbose_name='Описание', **NULLABLE)
+    name_of_category = models.CharField(max_length=100, verbose_name='Категория')
+    description_of_category = models.TextField(verbose_name='Описание', **NULLABLE)
 
     def __str__(self):
-        # Строковое отображение объекта
-        return f'{self.name} ({self.description[:20]}...)'
+        return f'{self.name_of_category} ({self.description_of_category[:20]}...)'
 
     class Meta:
-        verbose_name = 'Категория'
+        verbose_name = 'Категорию'
         verbose_name_plural = 'Категории'
 
 
 class Product(models.Model):
-    """Модель для таблицы Продуктов"""
-    name = models.CharField(max_length=150, verbose_name='Наименование')
-    description = models.TextField(verbose_name='Описание', **NULLABLE)
-    image = models.ImageField(upload_to='product/', verbose_name='картинка', **NULLABLE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
-    price = models.FloatField(verbose_name='Цена')
-    date_create = models.DateTimeField(verbose_name='Дата создания', **NULLABLE)
-    last_modified_data = models.DateTimeField(verbose_name='Дата последнего изменения', **NULLABLE)
+    name_of_product = models.CharField(max_length=100, verbose_name='Название')
+    description_of_product = models.TextField(verbose_name='Описание', **NULLABLE)
+    product_img = models.ImageField(upload_to='product/', verbose_name='Фото', **NULLABLE)
+    category_of_product = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+    price_of_product = models.FloatField(verbose_name='Цена')
+    date_of_creation = models.DateTimeField(verbose_name='Дата создания', **NULLABLE)
+    date_of_last_change = models.DateTimeField(verbose_name='Последнее изменение', **NULLABLE)
+
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Создатель')
 
     def __str__(self):
-        # Строковое отображение объекта
-        return (f'{self.name}.'
-                f'Категория: {self.category}.'
-                f'Цена: {self.price}')
+        return (f'{self.name_of_product}.'
+                f'Категория: {self.category_of_product}. '
+                f'Цена: {self.price_of_product}')
 
     class Meta:
         verbose_name = 'Продукт'
