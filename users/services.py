@@ -1,6 +1,6 @@
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
-from django.conf import settings
 from django.utils.crypto import get_random_string
 
 
@@ -19,7 +19,7 @@ def send_password(email):
     try:
         user = User.objects.get(email=email)
 
-        new_password = get_random_string(length=15)
+        new_password = get_random_string(length=16)
         user.set_password(new_password)
         user.save()
 
