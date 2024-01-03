@@ -1,327 +1,184 @@
 [
   {
     "model": "catalog.product",
-    "pk": 89,
+    "pk": 23,
     "fields": {
-      "name_of_product": "Samsung Galaxy S21",
-      "description_of_product": "Óëüòðàñîâðåìåííûé ñìàðòôîí Samsung Galaxy S21 ñ ïðîèçâîäèòåëüíûì ïðîöåññîðîì, óëó÷øåííîé êàìåðîé è âûñîêèì ðàçðåøåíèåì ýêðàíà. Ïðåêðàñíûé âûáîð äëÿ ôîòîãðàôèé, âèäåîçàïèñåé è ïîâñåäíåâíûõ çàäà÷.",
-      "product_img": "product/Samsung_Galaxy_S21.jpg",
-      "category_of_product": 87,
-      "price_of_product": 69990.0,
-      "date_of_creation": "2023-08-18T22:54:16Z",
-      "date_of_last_change": "2023-08-18T22:54:17Z"
+      "name": "Худи",
+      "description": "Худи с принтом",
+      "image": "hudi-programmirovanie-6iot97g.jpg",
+      "category": 21,
+      "price": 2500,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 90,
+    "pk": 24,
     "fields": {
-      "name_of_product": "iPhone 13",
-      "description_of_product": "Ëåãåíäàðíûé iPhone 13 ñ íåâåðîÿòíî áûñòðûì ïðîöåññîðîì, èííîâàöèîííîé êàìåðîé è ñòèëüíûì äèçàéíîì. Îòêðîéòå äëÿ ñåáÿ ìèð Apple ñ íîâûìè âîçìîæíîñòÿìè.",
-      "product_img": "product/iPhone_13.jpg",
-      "category_of_product": 87,
-      "price_of_product": 79990.0,
-      "date_of_creation": "2023-08-18T22:54:57Z",
-      "date_of_last_change": "2023-08-18T22:54:58Z"
+      "name": "Электронная книга Sony PRS-T3",
+      "description": "Электронная книга Sony PRS-T3\r\n\r\nОсновные характеристики\r\nЭкран E-Ink Pearl с инфракрасным сенсорным покрытием и технологией dual touch, диагональ 6\", 758 x 1024 точек, 16 градаций серого\r\nВстроенный модуль Wi-Fi (IEEE 802.11b/g/n), встроенный браузер Basic Browser\r\nИнтерфейс: microUSB\r\nВстроенная память — 1,3 ГБ\r\nПоддержка форматов книг: ePub, PDF, TXT, FB2. Мультимедиа: JPEG, PNG, GIF, BMP\r\nСлот для карты памяти формата microSD\r\nОС на базе Android\r\nПриложения Facebook, Evernote, Reader Apps; 5 встроенных словарей\r\nВстроенная обложка",
+      "image": "6de8e53187a56d8b0f991aecd39f68d1.jpeg",
+      "category": 22,
+      "price": 7000,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 91,
+    "pk": 25,
     "fields": {
-      "name_of_product": "Xiaomi Mi 11t",
-      "description_of_product": "Ìîùíûé è ñòèëüíûé ñìàðòôîí Xiaomi Mi 11t ñ âåëèêîëåïíîé êàìåðîé, ÿðêèì äèñïëååì è ïðîäâèíóòûìè ôóíêöèÿìè. Ïîäõîäèò äëÿ ãåéìåðîâ, ëþáèòåëåé ôîòîãðàôèé è àêòèâíûõ ïîëüçîâàòåëåé.",
-      "product_img": "product/Xiaomi_Mi_11t.png",
-      "category_of_product": 87,
-      "price_of_product": 42990.0,
-      "date_of_creation": "2023-08-18T22:55:29Z",
-      "date_of_last_change": "2023-08-18T22:55:30Z"
+      "name": "Компьютерный стул",
+      "description": "Компьютерное игровое кресло Defender Corsair CL-361 синее",
+      "image": "g3o9gbbzi61-400x400.jpg",
+      "category": 23,
+      "price": 10000,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 92,
+    "pk": 26,
     "fields": {
-      "name_of_product": "Google Pixel 6",
-      "description_of_product": "Èíòåëëåêòóàëüíûé ñìàðòôîí Google Pixel 6 ñ ôîêóñîì íà ôîòîãðàôèè, ìîùíûì ïðîöåññîðîì è îïåðàöèîííîé ñèñòåìîé Android. Îïòèìàëüíîå ðåøåíèå äëÿ ëþáèòåëåé ýêîñèñòåìû Google.",
-      "product_img": "product/Google_Pixel_6.jpg",
-      "category_of_product": 87,
-      "price_of_product": 54990.0,
-      "date_of_creation": "2023-08-18T22:55:55Z",
-      "date_of_last_change": "2023-08-18T22:55:56Z"
+      "name": "Стикеры",
+      "description": "Стикеры Skyeng",
+      "image": "kMv1ywFuD94fsKev5HWHPagWvjaP95RQI6uOo1Lc_3Luc5TZ.png",
+      "category": 24,
+      "price": 500,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 93,
+    "pk": 27,
     "fields": {
-      "name_of_product": "OnePlus 9",
-      "description_of_product": "Ñìàðòôîí OnePlus 9 ñ êàìåðîé, ðàçðàáîòàííîé ñîâìåñòíî ñ Hasselblad, áûñòðûì çàðÿäîì è ýëåãàíòíûì äèçàéíîì. Îòëè÷íûé âûáîð äëÿ òåõ, êòî öåíèò ñáàëàíñèðîâàííîñòü è ïðîèçâîäèòåëüíîñòü.",
-      "product_img": "product/OnePlus_9.jpg",
-      "category_of_product": 87,
-      "price_of_product": 49990.0,
-      "date_of_creation": "2023-08-18T22:56:21Z",
-      "date_of_last_change": "2023-08-18T22:56:22Z"
+      "name": "Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих (2017)",
+      "description": "Автор: Бхаргава А.\r\n\r\nОписание:\r\nАлгоритмы - это всего лишь пошаговые алгоритмы решения задач, и большинство таких задач уже были кем-то решены, протестированы и проверены. Можно, конечно, погрузиться в глубокую философию гениального Кнута, изучить многостраничные фолианты с доказательствами и обоснованиями, но хотите ли вы тратить на это свое время? Откройте великолепно иллюстрированную книгу, и вы сразу поймете, что алгоритмы - это просто. А грокать алгоритмы - это веселое и увлекательное занятие.",
+      "image": "53698d2ac87da5ed1702ed82245dc27c2745ab84.jpeg",
+      "category": 25,
+      "price": 1500,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 94,
+    "pk": 28,
     "fields": {
-      "name_of_product": "Dell XPS 13",
-      "description_of_product": "Íîóòáóê Dell XPS 13 ñ óëüòðàòîíêèì êîðïóñîì, âûñîêèì ðàçðåøåíèåì ýêðàíà è ìîùíûì ïðîöåññîðîì. Èäåàëüíîå ðåøåíèå äëÿ áèçíåñà è ðàçâëå÷åíèé.",
-      "product_img": "product/Dell_XPS_13.jpg",
-      "category_of_product": 88,
-      "price_of_product": 89990.0,
-      "date_of_creation": "2023-08-18T23:03:21Z",
-      "date_of_last_change": "2023-08-18T23:03:22Z"
+      "name": "Футболка",
+      "description": "Футболка с принтом",
+      "image": "6238484287.jpg",
+      "category": 21,
+      "price": 2000,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 95,
+    "pk": 29,
     "fields": {
-      "name_of_product": "ASUS ROG Zephyrus G14",
-      "description_of_product": "Èãðîâîé íîóòáóê ASUS ROG Zephyrus G14 ñ ïðîèçâîäèòåëüíîé âèäåîêàðòîé, âûñîêîé ÷àñòîòîé îáíîâëåíèÿ ýêðàíà è ñòèëüíûì äèçàéíîì. Îòêðîéòå äëÿ ñåáÿ ìèð ãåéìåðñêèõ âîçìîæíîñòåé.",
-      "product_img": "product/ASUS_ROG_Zephyrus_G14.jpg",
-      "category_of_product": 88,
-      "price_of_product": 129990.0,
-      "date_of_creation": "2023-08-18T23:03:46Z",
-      "date_of_last_change": "2023-08-18T23:03:47Z"
+      "name": "Мышь Defender",
+      "description": "Мышь проводная Defender, MM-362, Accura, оптическая, цвет: чёрный",
+      "image": "Defender_MM-3621.jpeg",
+      "category": 22,
+      "price": 1000,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 96,
+    "pk": 30,
     "fields": {
-      "name_of_product": "HP Envy x360",
-      "description_of_product": "Ìíîãîôóíêöèîíàëüíûé íîóòáóê HP Envy x360 ñ âîçìîæíîñòüþ ïðåâðàùåíèÿ â ïëàíøåò, ÿðêèì äèñïëååì è ñòèëåâûì äèçàéíîì. Îòëè÷íîå ðåøåíèå äëÿ òâîð÷åñòâà è ó÷åáû.",
-      "product_img": "product/HP_Envy_x360.jpg",
-      "category_of_product": 88,
-      "price_of_product": 69990.0,
-      "date_of_creation": "2023-08-18T23:04:08Z",
-      "date_of_last_change": "2023-08-18T23:04:08Z"
+      "name": "Чистый Python. Тонкости программирования для профи (2018)",
+      "description": "Автор: Бейдер Д.\r\n\r\nPython - это многофункциональный язык программирования с большим числом библиотек, дополнений и операторов. Большинство книг уделяет всё внимание обзору языка, даже тем функциям, которые могут так и не пригодится за всё время вашей личной разработки. Эта же книга направлена на изучение только самого полезного материала по языку, сосредоточившись на развитии практических навыков по Python 3.⠀",
+      "image": "6155698686.jpg",
+      "category": 25,
+      "price": 1700,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 97,
+    "pk": 31,
     "fields": {
-      "name_of_product": "Lenovo ThinkPad X1 Carbon",
-      "description_of_product": "Ïðîôåññèîíàëüíûé íîóòáóê Lenovo ThinkPad X1 Carbon ñ íàäåæíûì êîðïóñîì, âûñîêîé íàäåæíîñòüþ è ïðîäâèíóòûìè ôóíêöèÿìè áåçîïàñíîñòè. Ïîäõîäèò äëÿ áèçíåñà è ðàáîòû.",
-      "product_img": "product/Lenovo_ThinkPad_X1_Carbon.jpeg",
-      "category_of_product": 88,
-      "price_of_product": 115990.0,
-      "date_of_creation": "2023-08-18T23:04:30Z",
-      "date_of_last_change": "2023-08-18T23:04:31Z"
+      "name": "Компьютерный стол",
+      "description": "Геймерский компьютерный стол синий",
+      "image": "20994v1622_3.jpg",
+      "category": 23,
+      "price": 25000,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 98,
+    "pk": 32,
     "fields": {
-      "name_of_product": "Acer Swift 3",
-      "description_of_product": "Íîóòáóê Acer Swift 3 ñ õîðîøèì ñîîòíîøåíèåì öåíà-êà÷åñòâî, ñòèëüíûì äèçàéíîì è õîðîøåé ïðîèçâîäèòåëüíîñòüþ. Ïîäõîäèò äëÿ ïîâñåäíåâíûõ çàäà÷ è ðàçâëå÷åíèé.",
-      "product_img": "product/Acer_Swift_3.jpg",
-      "category_of_product": 88,
-      "price_of_product": 44990.0,
-      "date_of_creation": "2023-08-18T23:04:50Z",
-      "date_of_last_change": "2023-08-18T23:04:51Z"
+      "name": "Игровая клавиатура",
+      "description": "Игровая клавиатура Bloody B314 Light Strike (LK), черный",
+      "image": "dcba25d2f6fcb722f5d18625c558b49c.jpg",
+      "category": 22,
+      "price": 1500,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 99,
+    "pk": 33,
     "fields": {
-      "name_of_product": "Samsung Galaxy Tab S7",
-      "description_of_product": "Ïëàíøåò Samsung Galaxy Tab S7 ñ âûñîêèì ðàçðåøåíèåì ýêðàíà, ïîääåðæêîé ñòèëóñà S Pen è ïðîäâèíóòîé ïðîèçâîäèòåëüíîñòüþ. Îòëè÷íî ïîäõîäèò äëÿ ðèñîâàíèÿ, ðàáîòû è ðàçâëå÷åíèé.",
-      "product_img": "product/Samsung_Galaxy_Tab_S7.jpg",
-      "category_of_product": 89,
-      "price_of_product": 57990.0,
-      "date_of_creation": "2023-08-18T23:08:26Z",
-      "date_of_last_change": "2023-08-18T23:08:27Z"
+      "name": "Кружка",
+      "description": "Кружка Virtus.pro белая",
+      "image": "1feb99ab067811e8aa8d000c29ce8270_50314511067911e8aa8d000c29ce8270.jpg",
+      "category": 24,
+      "price": 700,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 100,
+    "pk": 34,
     "fields": {
-      "name_of_product": "Apple iPad Pro",
-      "description_of_product": "Ïëàíøåò Apple iPad Pro ñ ïðîèçâîäèòåëüíûì ïðîöåññîðîì M1, Retina-äèñïëååì è ìíîæåñòâîì ïðèëîæåíèé äëÿ òâîð÷åñòâà è ðàáîòû.",
-      "product_img": "product/Apple_iPad_Pro.jpg",
-      "category_of_product": 89,
-      "price_of_product": 72990.0,
-      "date_of_creation": "2023-08-18T23:08:51Z",
-      "date_of_last_change": "2023-08-18T23:08:52Z"
+      "name": "Изучаем Python (2019)",
+      "description": "Автор: Марк Лутц.\r\n\r\nКлассический учебник Python со всесторонним глубоким введением в язык программирования и для новичков в программировании, и для профи. Основана на популярном учебном курсе Лутца. Учит писать эффективный качественный код.",
+      "image": "d9203967bc37887d51631d26d7c9328a.jpg",
+      "category": 25,
+      "price": 2000,
+      "date_create": null,
+      "last_modified_data": null
     }
   },
   {
     "model": "catalog.product",
-    "pk": 101,
+    "pk": 41,
     "fields": {
-      "name_of_product": "Huawei MatePad Pro",
-      "description_of_product": "Ïëàíøåò Huawei MatePad Pro ñ ýëåãàíòíûì äèçàéíîì, ÿðêèì äèñïëååì è ìîùíûì ïðîöåññîðîì. Ïîäõîäèò äëÿ ðàçâëå÷åíèé è ðàáîòû â äâèæåíèè.",
-      "product_img": "product/Huawei_MatePad_Pro.jpg",
-      "category_of_product": 89,
-      "price_of_product": 45990.0,
-      "date_of_creation": "2023-08-18T23:09:14Z",
-      "date_of_last_change": "2023-08-18T23:09:15Z"
+      "name": "Apple Watch Series 8, 45 мм, корпус из алюминия серебристого цвета, спортивный ремешок белого цвета, размер S/M",
+      "description": "Обновленная линейка часов Apple Watch сохранила параметры экрана, но стала мощнее и умнее. Smart-часы способны обнаружить чрезвычайную ситуацию и сообщить о ней в экстренные службы или нужным контактам. В приложении Workout доступны новые виды тренировок, а подписка Fitness+ позволит подстроить комплекс упражнений под конкретного пользователя и его уровень физической подготовки. Теперь гаджет способен измерять температуру тела, чтобы лучше понимать женское здоровье и помогать контролировать цикл, следит за фазами сна, мониторит основные показатели здоровья.",
+      "image": "watch_xc4cMaq.jpeg",
+      "category": 22,
+      "price": 48000,
+      "date_create": "2023-09-04",
+      "last_modified_data": "2023-09-04"
     }
   },
   {
     "model": "catalog.product",
-    "pk": 102,
+    "pk": 42,
     "fields": {
-      "name_of_product": "Lenovo Tab P11",
-      "description_of_product": "Ïëàíøåò Lenovo Tab P11 ñ äëèòåëüíûì âðåìåíåì àâòîíîìíîé ðàáîòû è âñòðîåííîé ñåíñîðíîé ïàíåëüþ. Ïðàêòè÷íîå ðåøåíèå äëÿ ïîâñåäíåâíûõ çàäà÷.",
-      "product_img": "product/Lenovo_Tab_P11.jpg",
-      "category_of_product": 89,
-      "price_of_product": 22990.0,
-      "date_of_creation": "2023-08-18T23:10:20Z",
-      "date_of_last_change": "2023-08-18T23:10:21Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 103,
-    "fields": {
-      "name_of_product": "Microsoft Surface Go 3",
-      "description_of_product": "Êîìïàêòíûé è ëåãêèé ïëàíøåò Microsoft Surface Go 3 ñ ïîääåðæêîé ñòèëóñà Surface Pen è ìîùíûì ïðîöåññîðîì. Ïîäõîäèò äëÿ òâîð÷åñòâà è îáó÷åíèÿ.",
-      "product_img": "product/Microsoft_Surface_Go_3.jpg",
-      "category_of_product": 89,
-      "price_of_product": 34990.0,
-      "date_of_creation": "2023-08-18T23:10:44Z",
-      "date_of_last_change": "2023-08-18T23:10:45Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 104,
-    "fields": {
-      "name_of_product": "Samsung Galaxy Watch 4",
-      "description_of_product": "Óìíûå ÷àñû Galaxy Watch 4 ñ ôóíêöèåé èçìåðåíèÿ çäîðîâüÿ è ñòèëüíûì äèçàéíîì. Îòëè÷íûé ñïóòíèê äëÿ àêòèâíîãî îáðàçà æèçíè.",
-      "product_img": "product/Samsung_Galaxy_Watch_4.jpg",
-      "category_of_product": 90,
-      "price_of_product": 21990.0,
-      "date_of_creation": "2023-08-18T23:13:00Z",
-      "date_of_last_change": "2023-08-18T23:13:01Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 105,
-    "fields": {
-      "name_of_product": "Apple Watch SE",
-      "description_of_product": "Óìíûå ÷àñû Apple Watch SE ñ ìíîæåñòâîì ôóíêöèé, ñòèëüíûì äèçàéíîì è îïòèìàëüíîé öåíîé. Îòñëåæèâàéòå çäîðîâüå è îñòàâàéòåñü íà ñâÿçè ñ êîìôîðòîì.",
-      "product_img": "product/Apple_Watch_SE.jpeg",
-      "category_of_product": 90,
-      "price_of_product": 19990.0,
-      "date_of_creation": "2023-08-18T23:13:23Z",
-      "date_of_last_change": "2023-08-18T23:13:24Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 106,
-    "fields": {
-      "name_of_product": "Garmin Forerunner 745",
-      "description_of_product": "Óìíûå ÷àñû Garmin Forerunner 745 äëÿ ñïîðòñìåíîâ ñ ðàñøèðåííûìè ôóíêöèÿìè îòñëåæèâàíèÿ òðåíèðîâîê è äîëãèì âðåìåíåì àâòîíîìíîé ðàáîòû. Îòëè÷íûé âûáîð äëÿ ôèòíåñà.",
-      "product_img": "product/Garmin_Forerunner_745.jpg",
-      "category_of_product": 90,
-      "price_of_product": 31990.0,
-      "date_of_creation": "2023-08-18T23:13:47Z",
-      "date_of_last_change": "2023-08-18T23:13:48Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 107,
-    "fields": {
-      "name_of_product": "Fitbit Versa 3",
-      "description_of_product": "Óìíûå ÷àñû Fitbit Versa 3 ñ ôóíêöèåé èçìåðåíèÿ ïóëüñà, îòñëåæèâàíèÿ ñíà è ïîääåðæêîé ãîëîñîâîãî àññèñòåíòà. Ñòèëüíûé àêñåññóàð äëÿ àêòèâíîãî îáðàçà æèçíè.",
-      "product_img": "product/Fitbit_Versa_3.jpg",
-      "category_of_product": 90,
-      "price_of_product": 14990.0,
-      "date_of_creation": "2023-08-18T23:14:12Z",
-      "date_of_last_change": "2023-08-18T23:14:14Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 108,
-    "fields": {
-      "name_of_product": "Huawei Watch Fit",
-      "description_of_product": "Óìíûå ÷àñû Huawei Watch Fit ñ áîëüøèì öâåòíûì äèñïëååì, ìíîæåñòâîì òðåíèðîâî÷íûõ ðåæèìîâ è ëåãêèì äèçàéíîì. Îòñëåæèâàéòå ôèçè÷åñêóþ àêòèâíîñòü ñ óäîâîëüñòâèåì.",
-      "product_img": "product/Huawei_Watch_Fit.jpg",
-      "category_of_product": 90,
-      "price_of_product": 7990.0,
-      "date_of_creation": "2023-08-18T23:14:39Z",
-      "date_of_last_change": "2023-08-18T23:14:40Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 109,
-    "fields": {
-      "name_of_product": "Áåñïðîâîäíûå íàóøíèêè Apple AirPods Pro",
-      "description_of_product": "Áåñïðîâîäíûå íàóøíèêè Apple AirPods Pro ñ àêòèâíûì øóìîïîäàâëåíèåì è êà÷åñòâåííûì çâóêîì. Îòëè÷íîå äîïîëíåíèå ê âàøåìó ñìàðòôîíó èëè ïëàíøåòó.",
-      "product_img": "product/Apple_AirPods_Pro.jpg",
-      "category_of_product": 91,
-      "price_of_product": 18990.0,
-      "date_of_creation": "2023-08-18T23:19:04Z",
-      "date_of_last_change": "2023-08-18T23:19:05Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 110,
-    "fields": {
-      "name_of_product": "Ñòèëóñ Samsung S Pen",
-      "description_of_product": "Ñòèëóñ Samsung S Pen ñ òî÷íîé ïîäà÷åé è ýðãîíîìè÷íûì äèçàéíîì. Ïîäõîäèò äëÿ èñïîëüçîâàíèÿ ñ ïëàíøåòàìè è ñìàðòôîíàìè Samsung Galaxy.",
-      "product_img": "product/Ñòèëóñ_Samsung_S_Pen.jpg",
-      "category_of_product": 91,
-      "price_of_product": 3490.0,
-      "date_of_creation": "2023-08-18T23:19:24Z",
-      "date_of_last_change": "2023-08-18T23:19:25Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 111,
-    "fields": {
-      "name_of_product": "Çàðÿäíîå óñòðîéñòâî Anker PowerPort",
-      "description_of_product": "Çàðÿäíîå óñòðîéñòâî Anker PowerPort ñ ìíîæåñòâîì ïîðòîâ äëÿ îäíîâðåìåííîé çàðÿäêè óñòðîéñòâ. Ïîäõîäèò äëÿ ïóòåøåñòâèé è ïîâñåäíåâíîãî èñïîëüçîâàíèÿ.",
-      "product_img": "product/Çàðÿäíîå_óñòðîéñòâî_Anker_PowerPort.jpg",
-      "category_of_product": 91,
-      "price_of_product": 1290.0,
-      "date_of_creation": "2023-08-18T23:19:50Z",
-      "date_of_last_change": "2023-08-18T23:19:52Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 112,
-    "fields": {
-      "name_of_product": "Çàùèòíûé ÷åõîë Spigen Tough Armor",
-      "description_of_product": "Çàùèòíûé ÷åõîë Spigen Tough Armor äëÿ ñìàðòôîíîâ ñ ïðî÷íîé êîíñòðóêöèåé è ñòèëüíûì äèçàéíîì. Îáåñïå÷èâàåò íàäåæíóþ çàùèòó îò óäàðîâ è öàðàïèí.",
-      "product_img": "product/Çàùèòíûé_÷åõîë_Spigen_Tough_Armor.jpg",
-      "category_of_product": 91,
-      "price_of_product": 1590.0,
-      "date_of_creation": "2023-08-18T23:20:10Z",
-      "date_of_last_change": "2023-08-18T23:20:11Z"
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 113,
-    "fields": {
-      "name_of_product": "Áåñïðîâîäíàÿ çàðÿäêà Belkin Boost Up",
-      "description_of_product": "Áåñïðîâîäíàÿ çàðÿäêà Belkin Boost Up äëÿ ñìàðòôîíîâ è äðóãèõ óñòðîéñòâ ñ ïîääåðæêîé Qi. Óäîáíûé ñïîñîá çàðÿäêè áåç ïðîâîäîâ è áåñïîêîéñòâ.",
-      "product_img": "product/Áåñïðîâîäíàÿ_çàðÿäêà_Belkin_Boost_Up.jpeg",
-      "category_of_product": 91,
-      "price_of_product": 2490.0,
-      "date_of_creation": "2023-08-18T23:20:28Z",
-      "date_of_last_change": "2023-08-18T23:20:29Z"
+      "name": "Монитор 22 Acer",
+      "description": "Монитор 22 Acer K222HQLbd TN 1920x1080 5ms DVI-D, VGA",
+      "image": "monik.jpg",
+      "category": 22,
+      "price": 10000,
+      "date_create": "2023-09-04",
+      "last_modified_data": "2023-09-04"
     }
   }
 ]
