@@ -1,31 +1,31 @@
-{% load catalog_tags %}
-
+{% load my_tags %}
 
 <div class="col-3">
     <div class="card mb-4 box-shadow">
         <div class="card-header">
-            <h4 class="my-0 font-weight-normal">{{ product.name_of_product|slice:20 }}</h4>
+            <h4 class="my-0 font-weight-normal">{{ object.name|slice:18 }}</h4>
         </div>
         <div class="card-body">
-            <img class="img-thumbnail" src="{{ product.product_img|mymedia }}" style="height:150px" alt="product">
-            <h1 class="card-title pricing-card-title">{{ product.price_of_product }} rub</h1>
-            <p>{{ product.description_of_product|slice:100 }}...</p>
+            <img class="card-img-top" src="{{ object.image|mymedia }}" alt="product">
+            <h1 class="card-title pricing-card-title">{{ object.price }} ₽</h1>
 
-            {% for version in product.version_set.all %}
+            <p>{{ object.description|slice:40 }}</p>
+
+            {% for version in object.version_set.all %}
             {% if version.is_active %}
-            <p>Версия продукта: {{ version.version_number }}/{{ version.version_name }}</p>
+            <li>Версия продукта: {{ version }}</li>
             {% endif %}
             {% endfor %}
 
-            {% if product.user == request.user %}
-            <a href="{% url 'catalog:update_product' product.pk %}" class="btn btn-lg btn-block btn-outline-warning">Изменить
+            <button type="button" class="btn btn-lg btn-block btn-outline-success">Купить</button>
+            <a href="{% url 'catalog:product_detail' object.pk %}" class="btn btn-lg btn-block btn-outline-primary">Читать
+                далее</a>
+
+            {% if object.user == request.user %}
+            <a href="{% url 'catalog:update_product' object.pk %}" class="btn btn-sm btn-block btn-outline-warning">Изменить
                 продукт</a>
             {% endif %}
 
-            <button type="button" class="btn btn-lg btn-block btn-outline-success">Купить</button>
-            <a href="{% url 'catalog:info_about_product' product.pk %}"
-               class="btn btn-lg btn-block btn-outline-primary">Читать
-                далее</a>
         </div>
     </div>
 </div>
