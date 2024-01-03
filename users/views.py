@@ -92,4 +92,4 @@ class GenerateAndSendPasswordView(View):
             email = self.form.cleaned_data['email']
             if send_password(email):
                 return render(request, 'users/password_reset_success.html', {'email': email})
-        return render(request, 'users/password_reset_error.html')
+        return render(request, 'users/password_recovery.html')
